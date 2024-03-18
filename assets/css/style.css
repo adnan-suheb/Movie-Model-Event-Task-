@@ -1,0 +1,123 @@
+
+body{
+    background-color: #042b5f;
+}
+
+.logo{
+    display: inline-block;
+    width: 120px;
+}
+.logo img{
+    width: 100%
+}
+
+.movieCard{
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+.movieCard img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.ratingSection {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #032541;
+    padding: 1rem;
+    color: #fff;
+}
+.ratingSection .movieName h4{ 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.overviewSection{
+    position: absolute;
+    top: 125%;
+    height: 70%;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+}
+
+.movieCard:hover  .overviewSection,
+.movieCard:focus .overviewSection,
+.movieCard:active .overviewSection{
+    top: 30%;
+    opacity: 1;
+}
+
+.movieName{
+    height: 33px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+
+.backDrop{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    animation: fadeIn ease-in-out 0.3s;
+}
+
+.movieModel{
+    width: 60%;
+    position: fixed;
+    top: 12%;
+    left: 20%;
+    display: none;
+    animation: fadeSlideDown .3s ease-in-out;
+}
+
+.movieModel .card-header h3 i:hover{
+    color: red;
+}
+
+.backDrop.active, 
+.movieModel.active{
+    display: block;
+}
+
+.hideMovieModel{
+    cursor: pointer;
+}
+
+@keyframes fadeSlideDown {
+    from{
+        transform: translateY(-80px);
+        opacity: 0;
+    }   
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }     
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+
+
